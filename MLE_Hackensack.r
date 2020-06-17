@@ -36,7 +36,6 @@ mu1.int = abs(lmfit$coefficients[2])
 scale.int = sd(Data)
 set.seed(2)
 shape.int = runif(1,-1,1)
-k = 0
 llf = function(x) {
     k =(1 + (x[4]*(Data-(x[1]+(x[2]*time_index)))/x[3]))^(-1/x[4])
     pdf = (1/x[3])*((k)^(x[4]+1))*exp(-k)
@@ -46,7 +45,6 @@ result = try(
     expr =  optim(par = c(mu0.int,mu1.int,scale.int,shape.int), method = "L-BFGS-B", fn = llf, lower = c(0,-Inf,0,-Inf)), silent = TRUE
 )
 while (class(result) == "try-error"){
-    k = k+1
     shape.int = runif(1,-1,1)
     result = try(
       expr =  optim(par = c(mu0.int,mu1.int,scale.int,shape.int), method = "L-BFGS-B", fn = llf, lower = c(0,-Inf,0,-Inf)), silent = TRUE
