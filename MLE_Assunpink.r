@@ -50,7 +50,6 @@ result = try(
     expr =  optim(par = c(mu0.int,mu1.int,scale.int,shape.int), method = "L-BFGS-B", fn = llf, lower = c(0,-Inf,0,-Inf)), silent = TRUE
 )
 while (class(result) == "try-error"){
-    k = k+1
     shape.int = runif(1,-1,1)
     result = try(
       expr =  optim(par = c(mu0.int,mu1.int,scale.int,shape.int), method = "L-BFGS-B", fn = llf, lower = c(0,-Inf,0,-Inf)), silent = TRUE
