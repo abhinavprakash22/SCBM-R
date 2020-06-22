@@ -10,12 +10,12 @@ R code for reproducing the results  in
 2. `hackensack.csv`
 
 ## Execution:
-To execute the code make sure the relevant data files are in the same directory as the code file. Many of the R files generate plots and store it in the `Results` sub-directory. Make sure you create a `Results` sub-directory before running the code. The code does not create the sub-directory on its own.
+To execute the code make sure the relevant data files are in the same directory as the code file and the code must be executed from this folder. In R, the working directory can be set using the command `setwd('PATH TO FOLDER')`. Many of the R files generate plots and store it in the `Results` sub-directory. Make sure you create a `Results` sub-directory before running the code. The code does not create the sub-directory on its own.
 There are two ways to execute the code:
 1. The code can be executed directly from command line using the command:
 `Rscript filename.r`
 2. From `R` console or `Rstudio` using the command: `source('filename.r')`
 
-The R file `function.r` contains all the sub routines developed for the implementation and cannot be executed independently. It is called internally by other `R` files.
+The R file `function.r` contains all the subroutines developed for the implementation and should not be executed independently. It is called internally by other `R` files.
 
 
